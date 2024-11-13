@@ -18,6 +18,9 @@ docs/
 
 typechain*
 
+# IDE files
+.vscode/
+
 utils/**/*.js
 src/**/*.js
 
