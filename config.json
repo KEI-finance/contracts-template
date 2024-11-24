@@ -1,8 +1,7 @@
 {
   "develop": {
     "11155111": {
-      "salt": 0,
-      "owner": "0x921d360aD22A6D0289ce57fcb8250e299cB19EA3"
+      "salt": 0
     }
   }
 }
