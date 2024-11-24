@@ -8,6 +8,7 @@ on:
 
 env:
   FOUNDRY_PROFILE: ci
+  INFURA_API_KEY: ${{ secrets.INFURA_API_KEY }}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
