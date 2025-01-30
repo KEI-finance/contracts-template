@@ -97,7 +97,7 @@ setup:
 	@pnpm install
 	@forge clean
 	@forge install
-	@soldeer install --clean
+	@forge soldeer install --clean
 	@forge build --skip script test
 	@$(MAKE) typechain
 	@$(MAKE) compile

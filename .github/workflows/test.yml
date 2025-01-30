@@ -48,11 +48,13 @@ jobs:
       - name: Install Dependencies
         run: |
           pnpm install --frozen-lockfile
-          forge soldeer install --clean
 
-      - name: Run Forge build
+      - name: Run Make Setup
         run: |
-          make
+          make setup
+
+      - name: Run Forge Details
+        run: |
           forge --version
           forge build --sizes
         id: build
