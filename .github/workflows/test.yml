@@ -71,8 +71,7 @@ jobs:
       - name: Soldeer Publish
         if: github.ref == 'refs/heads/master'
         run: |
-          mkdir -p ~/.soldeer
-          echo "${{ secrets.SOLDEER_AUTH }}" > ~/.soldeer/.soldeer_login
+          forge soldeer login --email ${{ secrets.SOLDEER_EMAIL }} --password '${{ secrets.SOLDEER_PASSWORD }}'
           make soldeer-publish
         id: soldeer-publish
         continue-on-error: true
