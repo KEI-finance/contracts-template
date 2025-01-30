@@ -57,7 +57,7 @@ deploy-resume:
 
 deploy-tag:
 	@echo "Tagging deployment to $(ENV) environment"
-	@forge-utils append-meta --meta.env $(ENV) --new-files
+	@npx forge-utils append-meta --meta.env $(ENV) --new-files
 	@git reset
 	@npx forge-utils deployments
 	@git add deployments.json broadcast > /dev/null || true
@@ -84,7 +84,7 @@ typechain-v5:
 
 clean-typechain-bytecode:
 	@echo "Cleaning TypeChain bytecode..."
-	@forge-utils clean-typechain-bytecode
+	@npx forge-utils clean-typechain-bytecode
 
 # Generate all TypeChain bindings
 typechain: typechain-clean typechain-v6 typechain-v5 clean-typechain-bytecode
