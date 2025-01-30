@@ -59,7 +59,7 @@ deploy-tag:
 	@echo "Tagging deployment to $(ENV) environment"
 	@forge-utils append-meta --meta.env $(ENV) --new-files
 	@git reset
-    @forge-utils deployments
+	@forge-utils deployments
 	@git add deployments.json broadcast > /dev/null || true
 	@git commit -m "🚀🔥 DEPLOYED: $(CHAIN) network, $(ENV) environment 🌍💥"
 
