@@ -45,14 +45,14 @@ compile:
 deploy:
 	@echo "Deploying to $(CHAIN) in $(ENV) environment..."
 	$(call set_etherscan_api_key)
-	forge script script/Deploy.s.sol:DeployScript --broadcast --verify -vvvv --rpc-url $(CHAIN) --etherscan-api-key $(ETHERSCAN_API_KEY) --private-key $(PRIVATE_KEY)
+	forge script script/Deploy.s.sol:DeployScript --broadcast --verify -vvvv --rpc-url $(CHAIN) --etherscan-api-key $(ETHERSCAN_API_KEY) --private-key $(PRIVATE_KEY) || true
 	$(MAKE) deploy-tag
 
 # Resume deployment on selected chain and environment
 deploy-resume:
 	@echo "Resuming deployment on $(CHAIN) in $(ENV) environment..."
 	$(call set_etherscan_api_key)
-	forge script script/Deploy.s.sol:DeployScript --broadcast --verify --resume -vvvv --rpc-url $(CHAIN) --etherscan-api-key $(ETHERSCAN_API_KEY) --private-key $(PRIVATE_KEY)
+	forge script script/Deploy.s.sol:DeployScript --broadcast --verify --resume -vvvv --rpc-url $(CHAIN) --etherscan-api-key $(ETHERSCAN_API_KEY) --private-key $(PRIVATE_KEY) || true
 	$(MAKE) deploy-tag
 
 deploy-tag:
