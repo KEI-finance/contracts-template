@@ -39,7 +39,7 @@
     "ethers": ">=5.0.0"
   },
   "dependencies": {
-    "forge-utils": "^0.2.9"
+    "forge-utils": "^0.3.3"
   },
   "engines": {
     "node": ">=20.0.0",
