@@ -3,27 +3,8 @@
   "version": "0.0.1",
   "author": "KEI finance",
   "license": "UNLICENSED",
-  "exports": {
-    "./typechain/ethers-v6": {
-      "import": "./typechain/ethers-v6/index.js",
-      "require": "./typechain/ethers-v6/index.js",
-      "typings": "./typechain/ethers-v6/index.d.ts"
-    },
-    "./typechain/ethers-v5": {
-      "import": "./typechain/ethers-v5/index.js",
-      "require": "./typechain/ethers-v5/index.js",
-      "typings": "./typechain/ethers-v5/index.d.ts"
-    },
-    "./deployments.json": {
-      "import": "./deployments.json",
-      "require": "./deployments.json"
-    },
-    ".": {
-      "import": "./utils/index.js",
-      "require": "./utils/index.js",
-      "typings": "./utils/index.ts"
-    }
-  },
+  "main": "./utils/index.js",
+  "types": "./utils/index.d.ts",
   "scripts": {
     "prepublish": "make"
   },
