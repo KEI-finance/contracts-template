@@ -1,8 +1,9 @@
 [profile.default]
 src = "src"
 out = "out"
-libs = ["lib"]
+libs = ["dependencies"]
 fs_permissions = [{ access = "read", path = "./"}]
+ignored_warnings_from = ["dependencies", "test"]
 optimizer = true
 optimizer-runs = 200
 cbor_metadata = false

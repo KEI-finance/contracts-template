@@ -12,8 +12,8 @@ importers:
         specifier: '>=5.0.0'
         version: 6.8.1
       forge-utils:
-        specifier: ^0.3.4
-        version: 0.3.4
+        specifier: ^0.3.5
+        version: 0.3.5
     devDependencies:
       '@typechain/ethers-v5':
         specifier: ^11.1.2
@@ -678,8 +678,8 @@ packages:
     resolution: {integrity: sha512-TMKDUnIte6bfb5nWv7V/caI169OHgvwjb7V4WkeUvbQQdjr5rWKqHFiKWb/fcOwB+CzBT+qbWjvj+DVwRskpIg==}
     engines: {node: '>=14'}
 
-  forge-utils@0.3.4:
-    resolution: {integrity: sha512-uwC+YQ957RRqK5uDlMx8Lr5m4ymwv8BYVWKVyTMevZRd3gbAIOTo/d7dBDz6s2X9pVYXzfWwCPUpmKMIp1ZS4g==}
+  forge-utils@0.3.5:
+    resolution: {integrity: sha512-As/wurmbom2ldsjP+hYGvMeFTznIrU+Cre7xLTABe/6bH/wHsFuSm3gjG8+v3+/s5PbCw11Bu9ygkru3yoi+mg==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -2293,7 +2293,7 @@ snapshots:
       cross-spawn: 7.0.3
       signal-exit: 4.1.0
 
-  forge-utils@0.3.4:
+  forge-utils@0.3.5:
     dependencies:
       ethers: 6.13.5
       glob: 10.3.10
