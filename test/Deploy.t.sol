@@ -31,22 +31,29 @@ contract DeployTest__run is DeployTest {
         expected[11155111].push(ExpectDeployment("Counter", 0x0000000000000000000000000000000000000000));
     }
 
-    function assert_deployments() public {
+    function assert_deployments() public view {
         ExpectDeployment[] memory deployments = expected[block.chainid];
+
+        // first loop through and log all the addresses that are different generating a final hash to compare
+        string memory errorMessage = "";
         for (uint256 i; i < deployments.length; i++) {
-            ExpectDeployment memory expectedDeployment = deployments[i];
-            address deployment = deployment[expectedDeployment.name];
-            assertEq(
-                deployment,
-                expectedDeployment.addr,
-                string.concat(
-                    expectedDeployment.name,
-                    " address has changed. Current Address: ",
+            address expectedDeployment = deployments[i].addr;
+            address deployment = deployment[deployments[i].name];
+            if (deployment != expectedDeployment) {
+                errorMessage = string.concat(
+                    errorMessage,
+                    "\n",
+                    deployments[i].name,
+                    " changed. Current: ",
                     vm.toString(deployment),
-                    ". Expected address: ",
-                    vm.toString(expectedDeployment.addr)
-                )
-            );
+                    " <> Expected: ",
+                    vm.toString(expectedDeployment)
+                );
+            }
+        }
+
+        if (bytes(errorMessage).length > 0) {
+            revert(errorMessage);
         }
     }
 
